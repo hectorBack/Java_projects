@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Nuevo Contacto</title>
+    <!-- Agregar Bootstrap 3.3.7 CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+<body>
+
+<div class="container">
+    <h1 class="my-4">Agregar Nuevo Contacto</h1>
+
+    <form th:action="@{/contactos}" th:object="${contacto}" method="post" class="mb-4">
+        <div class="form-group">
+            <label for="nombre" class="control-label">Nombre:</label>
+            <input type="text" id="nombre" th:field="*{nombre}" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="telefono" class="control-label">Teléfono:</label>
+            <input type="text" id="telefono" th:field="*{telefono}" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="email" class="control-label">Email:</label>
+            <input type="email" id="email" th:field="*{email}" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="direccion" class="control-label">Dirección:</label>
+            <input type="text" id="direccion" th:field="*{direccion}" class="form-control" />
+        </div>
+
+        <button type="submit" class="btn btn-primary">Guardar</button>
+        <a href="/contactos" class="btn btn-default">Regresar a la lista</a>
+    </form>
+</div>
+
+<!-- Agregar Bootstrap 3.3.7 JS y dependencias -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</body>
+</html>
